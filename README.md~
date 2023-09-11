@@ -1,0 +1,8 @@
+Simple Shell
+
+Welcome to the Simple shell project! This program is a simple shell that can be compiled and launched from CLI.
+
+How to Compile
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
