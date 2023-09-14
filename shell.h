@@ -1,5 +1,5 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef SHELL_H
+#define SHELL_H
 
 
 #include <string.h>
@@ -12,8 +12,10 @@
 #include <signal.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "macros.h"
+#include "macro.h"
 #include <stdlib.h>
+
+#define BUFFER_SIZE 1024
 
 /**
  * struct builtins - This is the structure for builtins

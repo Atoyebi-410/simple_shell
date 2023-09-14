@@ -1,6 +1,12 @@
 #ifndef _HELPERS_H_
 #define _HELPERS_H_
 
+#define PROMPT_MSG "dali<3 "
+
+#define UNUSED __attribute__((unused))
+
+#define BUFFER_SIZE 1024
+
 #define HELP_MSG "help=\n"\
 "help:\thelp [BUILTIN_NAME]\n\n"\
 "	Display information about builtin commands.\n\n"\
