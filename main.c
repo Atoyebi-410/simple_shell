@@ -20,9 +20,10 @@ int main(int argc, char *argv[], char *env[])
 	signal(SIGINT, handle_ctrl_c);
 
 	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO) && argc == 1)
+	  {
 		errno = 2;
 		prompt = PROMPT_MSG;
-	}
+	  }
 	errno = 0;
 	sisifo(prompt, data);
 	return (0);

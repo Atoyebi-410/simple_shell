@@ -18,20 +18,6 @@
 #define BUFFER_SIZE 1024
 
 /**
- * struct builtins - This is the structure for builtins
- * @builtin: This is the name of the builtin
- * @function: This is the associated function to be called for each builtin
- */
-
-typedef struct builtins
-{
-	char *builtin;
-	int (*function)(data_of_program *data);
-} builtins;
-
-
-
-/**
  * struct info- This is the structure for the program's data
  * @program_name: This is the name of the executable
  * @input_line:This is the pointer to input read for _getline
@@ -45,15 +31,28 @@ typedef struct builtins
 
 typedef struct info
 {
-	char *program_name;
-	char *input_line;
-	char *command_name;
-	int exec_counter;
-	int file_descriptor;
-	char **tokens;
-	char **env;
-	char **alias_list;
+        char *program_name;
+        char *input_line;
+        char *command_name;
+        int exec_counter;
+        int file_descriptor;
+        char **tokens;
+        char **env;
+        char **alias_list;
 } data_of_program;
+
+
+/**
+ * struct builtins - This is the structure for builtins
+ * @builtin: This is the name of the builtin
+ * @function: This is the associated function to be called for each builtin
+ */
+
+typedef struct builtins
+{
+	char *builtin;
+	int (*function)(data_of_program *data);
+} builtins;
 
 /*========This is for env_management.c ========*/
 
@@ -64,10 +63,20 @@ void print_environ(data_of_program *data);
 
 /*========This is for builtins_env.c ========*/
 
+
+int builtin_set_env(data_of_program *data);
+int builtin_unset_env(data_of_program *data);
+
 int builtin_env(data_of_program *data);
+
+/*======== this is for str_tok.c ========*/
+
+void tokenize(data_of_program *data);
+char *_strtok(char *line, char *delim);
 
 /*========This is for builtins_more.c(BUILTINS) ========*/
 
+int builtin_cd(data_of_program *data);
 int builtin_exit(data_of_program *data);
 int set_work_directory(data_of_program *data, char *new_dir);
 int builtin_help(data_of_program *data);
@@ -80,8 +89,15 @@ void initialize_data(data_of_program *data, int arc, char *argv[], char **env);
 void handle_ctrl_c(int opr UNUSED);
 
 /*=== This is for _getline.c (main function) ===*/
+
 int check_logic_ops(char *array_commands[], int i, char array_operators[]);
 int _getline(data_of_program *data);
+
+/*======== alias_management.c ========*/
+
+int print_alias(data_of_program *data, char *alias);
+char *get_alias(data_of_program *data, char *alias);
+int set_alias(char *alias_string, data_of_program *data);
 
 /*==== this is for helpers_numbers.c ====*/
 
@@ -129,5 +145,10 @@ char *str_duplicate(char *string);
 int str_compare(char *string1, char *string2, int number);
 char *str_concat(char *string1, char *string2);
 void str_reverse(char *string);
+
+/*======== str_tok.c ========*/
+
+void tokenize(data_of_program *data);
+char *_strtok(char *line, char *delim);
 
 #endif
