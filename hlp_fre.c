@@ -44,7 +44,7 @@ void free_all_data(data_of_program *data)
 
 
 /**
- * free_array_of_pointers - this frees each pointer of an array of pointers and the
+ * free_array_of_pointers - this free pointer of an array of pointers and the
  * array
  * @array: this is an array of pointers
  * Return: 0

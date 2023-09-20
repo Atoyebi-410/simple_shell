@@ -15,7 +15,6 @@
 #include "macro.h"
 #include <stdlib.h>
 
-#define BUFFER_SIZE 1024
 
 /**
  * struct info- This is the structure for the program's data

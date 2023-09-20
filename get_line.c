@@ -96,4 +96,3 @@ array_operators[i] = array_operators[i + 1];
 
 return (str_length(data->input_line));
 }
-
