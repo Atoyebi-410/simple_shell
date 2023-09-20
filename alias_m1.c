@@ -5,7 +5,7 @@
  * get_alias - this is to add, remove or show aliases
  * @data: this is the structure for the program's data
  * @name: this is the name of the requested alias.
- * Return: if successfull, return 0, or other number if its declared in the args
+ * Return: if successful, return 0, or other number if in the args
  */
 
 char *get_alias(data_of_program *data, char *name)

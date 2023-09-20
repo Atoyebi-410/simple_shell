@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <sys/stat.h> 
+#include <sys/stat.h>
 #include <signal.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -28,17 +28,16 @@
  * @env: This is the copy of the environ
  * @alias_list: This is array of pointers with aliases.
  */
-
 typedef struct info
 {
-        char *program_name;
-        char *input_line;
-        char *command_name;
-        int exec_counter;
-        int file_descriptor;
-        char **tokens;
-        char **env;
-        char **alias_list;
+char *program_name;
+char *input_line;
+char *command_name;
+int exec_counter;
+int file_descriptor;
+char **tokens;
+char **env;
+char **alias_list;
 } data_of_program;
 
 
