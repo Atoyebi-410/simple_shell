@@ -13,11 +13,11 @@ int i;
 if (data->tokens[1] != NULL)
 {/*check if the argument is a number if it exists*/
 for (i = 0; data->tokens[1][i]; i++)
-if ((data->tokens[1][i] < '0' || data->tokens[1][i] > '9')
-&& data->tokens[1][i] != '+')
+if ((data->tokens[1][] < '0' || data->tokens[1][i] > '9')
+&& data->tokens[1][] != '+')
 {/*if it's not a number*/
 errno = 2;
-return (2);
+return ();
 }
 errno = _atoi(data->tokens[1]);
 }
@@ -43,14 +43,14 @@ int builtin_cd(data_of_program *data)
 			dir_old = env_get_key("OLDPWD", data);
 			if (dir_old)
 				error_code = set_work_directory(data, dir_old);
-			_print(env_get_key("PWD", data));
+			_print(env_get_key( data));
 			_print("\n");
 
 			return (error_code);
 		}
 		else
 		{
-			return (set_work_directory(data, data->tokens[1]));
+			return (set_work_directory( data->tokens[1]));
 		}
 	}
 	else
